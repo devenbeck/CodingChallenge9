@@ -40,3 +40,22 @@ calculateAnnualSalary() {
 const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5); //new manager test case
 console.log(mgr1.getDetails());
 console.log(mgr1.calculateBonus()); 
+
+//Task 3: Creating a Company Class
+//Scenario: A company needs to store and manage employee data efficiently
+class Company {         //company class created
+    constructor (name) {
+        this.name = name;       
+        this.employees = [];   //array called employees to store objects
+    };
+    addEmployee(employee) {
+        this.employees.push(employee);   //method to add employees to the array
+    }
+    listEmployees() {
+        this.employees.forEach(employee => console.log(employee.getDetails()));
+    }
+};
+const company = new Company("TechCorp");
+company.addEmployee(emp1);   //calling upon previous tasks
+company.addEmployee(mgr1);
+company.listEmployees();   //prints out result which is combo from last 2 tasks
