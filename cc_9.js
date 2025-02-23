@@ -59,3 +59,12 @@ const company = new Company("TechCorp");
 company.addEmployee(emp1);   //calling upon previous tasks
 company.addEmployee(mgr1);
 company.listEmployees();   //prints out result which is combo from last 2 tasks
+
+//Task 4: Implementing a Payroll System
+//Scenario: The HR Department needs to process salaries efficiently
+Company.prototype.calculateTotalPayroll =function() {   //using prototype function instead of modifying task 3 to add calculate total payroll to company class
+    return this.employees.reduce((total, employee) =>  total + employee.calculateAnnualSalary(), 0); // total payroll, sum of all employee salaries
+    };// payroll system
+console.log(company.calculateTotalPayroll()); 
+
+
