@@ -67,4 +67,13 @@ Company.prototype.calculateTotalPayroll =function() {   //using prototype functi
     };// payroll system
 console.log(company.calculateTotalPayroll()); 
 
+//Task 5: Implementing Promotions
+//Scenario: Company wants to promote employees to managerial positions
+Company.prototype.promoteToManager = function(employee, teamSize) {   //add another method to company class without editing task 3
+    const index = this.employees.indexOf(employee);
+    if (index !== -1)   //checks if employee is present in employee array
+     this.employees[index] = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize); // converts employee to manager (promotion)
+};
+company.promoteToManager(emp1, 3);
+company.listEmployees();
 
